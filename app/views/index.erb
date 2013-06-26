@@ -1,23 +1,49 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  Form GET: <br>
+  <form action="/cool_url" method="GET">
+    <input type="text" name="get_input">
+    <textarea cols="40" rows="5" name="text_box"></textarea><br>
+    <input type="checkbox" name="option1" value="Milk"> Milk<br>
+    <input type="checkbox" name="option2" value="Butter"> Butter<br>
+    <input type="checkbox" name="option3" value="Cheese">Cheese<br>
+    <br>
+    <br>
+    <input type="text" name="post[title]">
+    <input type="text" name="chair[price]">
+    <textarea name="post[description]"></textarea>
+    <input type="submit" value="submit!">
+  </form>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+
+  <br>Form POST: 
+  <form action="/cool_url" method="POST">
+    <input type="text" name="post_input">
+    <textarea cols="40" rows="5" name="text_box"></textarea><br>
+    <input type="radio" name="group1" value="Milk"> Milk<br>
+    <input type="radio" name="group1" value="Butter" checked>Butter<br>
+    <input type="submit" value="submit!">
+  </form>
 </div>
+
+<!-- 
+1. How do all the packets split when transferring across the ISP's?
+2. On an even more basic level, what exactly is a packet? 
+  -A certain number of bytes containing data that has data, sender's IP address, receiver's IP address, number of packets that data (for instance an email) was broken into before it was sent, and the number of that particular packet.
+3. What is different about building an app that will scale? 
+4. Why do seemingly easy features for companies take so long to build? Example: Tinder, for the longest time, knew that they needed to add a way to filter people by age. Why does it take essentially 8 months to do something like that for a team of dozens of people? Seems like it should take a week max.
+5. What are some of the biggest differences between sinatra and rails? 
+  -Sinatra
+    -little MVC and no ORM database wrapper.
+    -No scaffolding
+    -Routes and controllers are somewhat merged
+    -good for small apps and API's
+  -Rails
+    -manages database and updates to it
+    -TDD
+    -scaffolding
+    -use SASS for CSS and coffeescript for JS
+6. If you write your own gem, how does it work so that when I type 'gem install ____', your specific gem gets installed. Like is there a place where people who make gems must upload them? What happens if there are bugs in the gems? I feel like that must happen right? 
+  -Gems can be written by anyone and they can be pushed to the RubyGems.org site. Then anyone can install it by typing gem install and then the name. I assume that there are plenty of bugs in gems. 
+7. Are any gems open-source?
+  -I guess RubyGems is open-source...kinda like anyone can add gems, but I couldn't find any gems that anyone can commit to. 
+   -->
