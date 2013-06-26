@@ -50,7 +50,7 @@ end
 
 
 get '/posts' do 
-	@category = Post.all
+	@post = Post.all
 	erb :'/posts/index'
 end
 
@@ -70,7 +70,12 @@ get '/posts/:id/edit' do
 end
 
 post '/posts' do 
-	erb :'/posts/index'
+	post = Post.new(params[:post])
+	if post.save
+		redirect to '/posts'
+	else
+		erb :'/posts/new'
+	end
 end
 
 put '/posts/:id' do
