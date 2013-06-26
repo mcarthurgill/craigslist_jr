@@ -1,0 +1,12 @@
+<h1> <%=@category.name%> </h1>
+
+<a href="/categories">Back to categories</a>
+
+
+<h3><a href="/posts/new">Add a new post</a></h3><br>
+
+
+<h2> Post Listing </h2>
+<% @category_posts.each do |category| %>
+	<a href="/posts/<%=category.id%>"><h4><%= category.name %></h4></a><br>
+<% end %>
